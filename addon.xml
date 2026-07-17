@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.klangjager" version="1.0.0" name="KlangJager" provider-name="Mario Yager">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="1800" height="1080" aspect="15:9" default="false" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<email>mryager@gmail.com</email>
+		<forum>http://forum.kodi.tv/</forum>
+		<source>https://github.com/xbmc/skin.estuary/</source>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<screenshot>resources/screenshot-04.jpg</screenshot>
+			<screenshot>resources/screenshot-05.jpg</screenshot>
+			<screenshot>resources/screenshot-06.jpg</screenshot>
+			<screenshot>resources/screenshot-07.jpg</screenshot>
+			<screenshot>resources/screenshot-08.jpg</screenshot>
+		</assets>
+		<summary lang="en_US">Vintage Radio skin for Kodi</summary>
+		<summary lang="es_AR">Skin Vintage Radio para Kodi</summary>
+		<summary lang="es_ES">Skin Vintage Radio para Kodi</summary>
+		<summary lang="es_MX">Skin Vintage Radio para Kodi</summary>
+		<description lang="en_US">Skin designed to be used on touchscreen devices</description>
+		<description lang="es_AR">Esta skin está diseñada para usarla en dispositivos táctiles</description>
+		<description lang="es_ES">Esta skin está diseñada para usarla en dispositivos táctiles</description>
+		<description lang="es_MX">Esta skin está diseñada para usarla en dispositivos táctiles</description>
+		<disclaimer lang="en_US">Estuary is the default skin for Kodi, removing it may cause issues</disclaimer>
+		<disclaimer lang="es_AR">Estuary es el skin por defecto de Kodi. Borrarlo puede causar problemas</disclaimer>
+		<disclaimer lang="es_ES">Estuary es el skin por defecto de Kodi, quitarlo puede causar problemas</disclaimer>
+		<disclaimer lang="es_MX">Estuary es la máscara predeterminada de Kodi, eliminarla puede causar problemas</disclaimer>
+	</extension>
+</addon>
