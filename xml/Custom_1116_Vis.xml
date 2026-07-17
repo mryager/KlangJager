@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window id="1116">
+    <defaultcontrol always="true">3000</defaultcontrol>
+	<onload>Skin.SetString(VizMode,Windowed)</onload>
+	<onload>ReplaceWindow(visualisation)</onload>
+    <controls>
+	</controls>
+</window>

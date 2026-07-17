@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1108">
+    <defaultcontrol always="true">5000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+    <controls>
+		<control type="group">
+		<posx>870</posx>
+		<posy>120</posy>
+		<width>450</width>
+		<height>480</height>
+            <control type="image">
+                <width>450</width>
+                <height>450</height>
+                <texture>extra/MusicOSDSettings_back.png</texture>
+            </control>
+            <control type="group">
+                <left>70</left>
+                <top>30</top>
+                <control type="grouplist" id="5000">
+					<width>300</width>
+					<height>500</height>
+					<orientation>vertical</orientation>
+					<itemgap>10</itemgap>
+					<onup>5000</onup>
+					<ondown>5000</ondown>
+					<!-- MUSIC -->
+					<control type="button" id="5001">
+						<include content="DialogSettingButtonPopup">
+							<param name="height" value="40"/>
+							<param name="textoffsetx" value="20"/>
+						</include>
+						<label>$LOCALIZE[2]</label>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),1)">Skin.SetString(HomeButton1,music)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),2)">Skin.SetString(HomeButton2,music)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),3)">Skin.SetString(HomeButton3,music)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),4)">Skin.SetString(HomeButton4,music)</onclick>
+						<onclick>Close</onclick>
+					</control>
+					<!-- VIDEOS -->
+					<control type="button" id="5002">
+						<include content="DialogSettingButtonPopup">
+							<param name="height" value="40"/>
+							<param name="textoffsetx" value="20"/>
+						</include>
+						<label>$LOCALIZE[3]</label>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),1)">Skin.SetString(HomeButton1,videos)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),2)">Skin.SetString(HomeButton2,videos)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),3)">Skin.SetString(HomeButton3,videos)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),4)">Skin.SetString(HomeButton4,videos)</onclick>
+						<onclick>Close</onclick>
+					</control>
+					<!-- PICTURES -->
+					<control type="button" id="5003">
+						<include content="DialogSettingButtonPopup">
+							<param name="height" value="40"/>
+							<param name="textoffsetx" value="20"/>
+						</include>
+						<label>$LOCALIZE[1]</label>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),1)">Skin.SetString(HomeButton1,pictures)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),2)">Skin.SetString(HomeButton2,pictures)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),3)">Skin.SetString(HomeButton3,pictures)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),4)">Skin.SetString(HomeButton4,pictures)</onclick>
+						<onclick>Close</onclick>
+					</control>
+					<!-- WEATHER -->
+					<control type="button" id="5004">
+						<include content="DialogSettingButtonPopup">
+							<param name="height" value="40"/>
+							<param name="textoffsetx" value="20"/>
+						</include>
+						<label>$LOCALIZE[8]</label>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),1)">Skin.SetString(HomeButton1,weather)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),2)">Skin.SetString(HomeButton2,weather)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),3)">Skin.SetString(HomeButton3,weather)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),4)">Skin.SetString(HomeButton4,weather)</onclick>
+						<onclick>Close</onclick>
+					</control>
+					<!-- YOUTUBE -->
+					<control type="button" id="5005">
+						<include content="DialogSettingButtonPopup">
+							<param name="height" value="40"/>
+							<param name="textoffsetx" value="20"/>
+						</include>
+						<label>YouTube</label>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),1)">Skin.SetString(HomeButton1,youtube)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),2)">Skin.SetString(HomeButton2,youtube)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),3)">Skin.SetString(HomeButton3,youtube)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),4)">Skin.SetString(HomeButton4,youtube)</onclick>
+						<onclick>Close</onclick>
+					</control>
+					<!-- GAMES -->
+					<control type="button" id="5006">
+						<include content="DialogSettingButtonPopup">
+							<param name="height" value="40"/>
+							<param name="textoffsetx" value="20"/>
+						</include>
+						<label>$LOCALIZE[10821]</label>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),1)">Skin.SetString(HomeButton1,games)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),2)">Skin.SetString(HomeButton2,games)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),3)">Skin.SetString(HomeButton3,games)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),4)">Skin.SetString(HomeButton4,games)</onclick>
+						<onclick>Close</onclick>
+					</control>
+					<!-- ADDONS -->
+					<control type="button" id="5007">
+						<include content="DialogSettingButtonPopup">
+							<param name="height" value="40"/>
+							<param name="textoffsetx" value="20"/>
+						</include>
+						<label>$LOCALIZE[24001]</label>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),1)">Skin.SetString(HomeButton1,addons)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),2)">Skin.SetString(HomeButton2,addons)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),3)">Skin.SetString(HomeButton3,addons)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),4)">Skin.SetString(HomeButton4,addons)</onclick>
+						<onclick>Close</onclick>
+					</control>
+					<!-- FAVOURITES -->
+					<control type="button" id="5008">
+						<include content="DialogSettingButtonPopup">
+							<param name="height" value="40"/>
+							<param name="textoffsetx" value="20"/>
+						</include>
+						<label>$LOCALIZE[1036]</label>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),1)">Skin.SetString(HomeButton1,favourites)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),2)">Skin.SetString(HomeButton2,favourites)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),3)">Skin.SetString(HomeButton3,favourites)</onclick>
+						<onclick condition="String.IsEqual(Window(Home).Property(ButtonToEdit),4)">Skin.SetString(HomeButton4,favourites)</onclick>
+						<onclick>Close</onclick>
+					</control>
+					
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

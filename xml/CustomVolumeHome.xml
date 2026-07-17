@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1113" type="dialog">
+	<defaultcontrol>107</defaultcontrol>
+	<include>dialogeffect</include>
+	<controls>
+		<control type="button">
+			<description>Hidden button to close the window when its focused</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>ScreenWidth</width>
+			<height>960</height>
+			<texturenofocus></texturenofocus>
+			<texturefocus></texturefocus>
+			<onclick>Back</onclick>
+			<visible>![Window.IsVisible(Notification) | Window.IsVisible(VolumeBar) | Window.IsVisible(SeekBar)]</visible>
+		</control>
+		<control type="group">
+			<posx>45</posx>
+			<posy>255</posy>
+			<visible>![Window.IsVisible(Notification) | Window.IsVisible(VolumeBar) | Window.IsVisible(SeekBar)]</visible>
+			<control type="label">
+				<description>label</description>
+				<posx>360</posx>
+				<posy>310</posy>
+				<height>40</height>
+				<width>200</width>
+				<label>13376</label>
+				<font>Vintagesb35</font>
+				<textcolor>DDE8D2B0</textcolor>
+				<align>left</align>
+			</control>
+			<control type="label">
+				<description>Volumelabel</description>
+				<posx>520</posx>
+				<posy>310</posy>
+				<height>40</height>
+				<width>200</width>
+				<label>$INFO[Control.GetLabel(1)]</label>
+				<font>Vintagesb35</font>
+				<textcolor>DDE8D2B0</textcolor>
+				<align>left</align>
+			</control>
+			<control type="image">
+				<posx>48</posx>
+				<posy>360</posy>
+				<width>640</width>
+				<height>30</height>
+				<texture>extra/progress_bg.png</texture>
+			</control> 
+			<control type="progress">
+				<description>Volume</description>
+				<posx>60</posx>
+				<posy>355</posy>
+				<width>618</width>
+				<height>10</height>
+				<info>Player.Volume</info> 
+				<texturebg></texturebg>
+				<midtexture>extra/progress_fill20.png</midtexture>
+			</control>
+			<control type="image">
+				<posx>48</posx>
+				<posy>360</posy>
+				<width>640</width>
+				<height>30</height>
+				<texture>extra/progress_overlay.png</texture>
+			</control>
+			<control type="slider" id="107">
+				<description>Volume Slider</description>
+				<left>60</left>
+				<top>357</top>
+				<width>618</width>
+				<height>35</height>
+				<onup>Back</onup>
+				<ondown>Back</ondown>
+				<action>Volume</action>
+				<texturesliderbar colordiffuse="00FFFFFF">extra/progress_nib3.png</texturesliderbar>
+				<textureslidernib>extra/progress_nib3.png</textureslidernib>
+				<textureslidernibfocus colordiffuse="FFCC6600">extra/progress_nib3.png</textureslidernibfocus>
+			</control>
+		</control>
+	</controls>
+</window>

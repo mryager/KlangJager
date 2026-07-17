@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1117" type="dialog">
+	<include>dialogeffect</include>
+	<controls>
+		<control type="button">
+			<description>Hidden button to close the window when its focused</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>ScreenWidth</width>
+			<height>1080</height>
+			<texturenofocus></texturenofocus>
+			<texturefocus></texturefocus>
+			<onclick>Back</onclick>
+			<visible>![Window.IsVisible(Notification) | Window.IsVisible(VolumeBar) | Window.IsVisible(SeekBar)]</visible>
+		</control>
+		<control type="group">
+			<left>50%</left>
+			<posy>32</posy>
+			<control type="image">
+				<left>-675</left>
+				<width>1350</width>
+				<height>75</height>
+				<texture>extra/music_progress_background.png</texture>
+			</control>
+			<control type="progress">
+				<description>Music Progress</description>
+				<left>-522</left>
+				<posy>7</posy>
+				<width>1050</width>
+				<height>30</height>
+				<info>Player.Volume</info> 
+				<texturebg></texturebg>
+				<midtexture>extra/progress_fill30.png</midtexture>
+			</control>
+			<control type="image">
+				<left>-675</left>
+				<width>1350</width>
+				<height>75</height>
+				<texture>extra/music_progress_frame.png</texture>
+			</control>
+			<control type="slider" id="1">
+				<description>Volume Slider</description>
+				<left>-525</left>
+				<posy>8</posy>
+				<width>1060</width>
+				<height>60</height>
+				<action>Volume</action>
+				<texturesliderbar colordiffuse="00FFFFFF">extra/progress_nib3.png</texturesliderbar>
+				<textureslidernib>extra/progress_nib3.png</textureslidernib>
+				<textureslidernibfocus colordiffuse="FFCC6600">extra/progress_nib3.png</textureslidernibfocus>
+			</control>
+			<control type="label">
+				<left>-655</left>
+				<posy>19</posy>
+				<width>120</width>
+				<height>40</height>
+				<alignx>right</alignx>
+				<aligny>center</aligny>
+				<font>Vintagesb30</font>
+				<textcolor>DDE8D2B0</textcolor>
+				<label>Volumen</label>
+			</control>  
+			<control type="label">
+				<left>565</left>
+				<posy>19</posy>
+				<width>100</width>
+				<height>40</height>
+				<alignx>right</alignx>
+				<aligny>center</aligny>
+				<font>Vintagesb35</font>
+				<textcolor>DDE8D2B0</textcolor>
+				<label>$INFO[Control.GetLabel(1)]</label>
+			</control>  
+		</control>
+	</controls>
+</window>

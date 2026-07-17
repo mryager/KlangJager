@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1114" type="dialog">
+	<defaultcontrol always="true">9009</defaultcontrol>
+	<include>Window_OpenClose_Animation</include>
+	<controls>	
+<!-- Background -->
+	<control type="group">	
+		<posx>45</posx>
+		<posy>255</posy>
+		<control type="image">
+			<width>750</width>
+			<height>470</height>
+			<texture>extra/back-osd-home2.png</texture>
+		</control>
+		<control type="image">
+			<width>750</width>
+			<height>470</height>
+			<texture>extra/frame-osd-home2.png</texture>
+		</control>
+<!-- App icons -->
+		<control type="group" id="9009">
+			<posx>0</posx>
+			<posy>0</posy>
+				<control type="button" id="9010">
+					<posx>40</posx>
+					<posy>40</posy>
+					<width>140</width>
+					<height>140</height>
+					<onup>9010</onup>
+					<ondown>9013</ondown>
+					<onleft>9010</onleft>
+					<onright>9011</onright>
+					<texturefocus colordiffuse="DDE8D2B0">extra/icon_button_reload_skin.png</texturefocus>
+					<texturenofocus>extra/icon_button_reload_skin.png</texturenofocus>
+					<onclick>Dialog.Close(1114)</onclick>
+					<onclick>ReloadSkin()</onclick>
+				</control>
+				<control type="button" id="9011">
+					<posx>240</posx>
+					<posy>40</posy>
+					<width>140</width>
+					<height>140</height>
+					<onup>9011</onup>
+					<ondown>9014</ondown>
+					<onleft>9010</onleft>
+					<onright>9012</onright>
+					<texturefocus colordiffuse="DDE8D2B0">extra/icon_button_logoff.png</texturefocus>
+					<texturenofocus>extra/icon_button_logoff.png</texturenofocus>
+					<onclick>Dialog.Close(1114)</onclick>				
+					<onclick>System.LogOff</onclick>
+				</control>
+				<control type="button" id="9012">
+					<posx>560</posx>
+					<posy>40</posy>
+					<width>140</width>
+					<height>140</height>
+					<onup>9012</onup>
+					<ondown>9016</ondown>
+					<onleft>9011</onleft>
+					<onright>9012</onright>
+					<texturefocus colordiffuse="DDE8D2B0">extra/back.png</texturefocus>
+					<texturenofocus>extra/back.png</texturenofocus>
+					<onclick>Dialog.Close(1114)</onclick>
+					<onclick>ActivateWindow(1115)</onclick>
+				</control>
+				<control type="button" id="9013">
+					<posx>40</posx>
+					<posy>240</posy>
+					<width>140</width>
+					<height>140</height>
+					<onup>9010</onup>
+					<ondown>9013</ondown>
+					<onleft>9013</onleft>
+					<onright>9014</onright>
+					<texturefocus colordiffuse="DDE8D2B0">extra/icon_button_reset.png</texturefocus>
+					<texturenofocus>extra/icon_button_reset.png</texturenofocus>
+					<onclick>Dialog.Close(1114)</onclick>
+					<onclick>Reset</onclick>
+				</control>
+				<control type="button" id="9014">
+					<posx>240</posx>
+					<posy>240</posy>
+					<width>140</width>
+					<height>140</height>
+					<onup>9011</onup>
+					<ondown>9014</ondown>
+					<onleft>9013</onleft>
+					<onright>9016</onright>
+					<texturefocus colordiffuse="DDE8D2B0">extra/icon_button_shutdown.png</texturefocus>
+					<texturenofocus>extra/icon_button_shutdown.png</texturenofocus>
+					<onclick>Dialog.Close(1114)</onclick>
+					<onclick>Shutdown</onclick>
+				</control>
+				<control type="button" id="9016">
+					<posx>560</posx>
+					<posy>240</posy>
+					<width>140</width>
+					<height>140</height>
+					<onup>9012</onup>
+					<ondown>9016</ondown>
+					<onleft>9014</onleft>
+					<onright>9016</onright>
+					<texturefocus colordiffuse="DDE8D2B0">extra/close.png</texturefocus>
+					<texturenofocus>extra/close.png</texturenofocus>
+					<onclick>Dialog.Close(1114)</onclick>
+				</control>
+		</control>
+	</control>
+	</controls>
+</window>
