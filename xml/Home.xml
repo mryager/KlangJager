@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>9000</defaultcontrol>
+	<onload condition="String.IsEmpty(Skin.String(VizMode))">Skin.SetString(VizMode,Windowed)</onload>
+	<onload condition="String.IsEmpty(Skin.String(HomeButton1))">Skin.SetString(HomeButton1,music)</onload>
+    <onload condition="String.IsEmpty(Skin.String(HomeButton2))">Skin.SetString(HomeButton2,videos)</onload>
+    <onload condition="String.IsEmpty(Skin.String(HomeButton3))">Skin.SetString(HomeButton3,pictures)</onload>
+    <onload condition="String.IsEmpty(Skin.String(HomeButton4))">Skin.SetString(HomeButton4,weather)</onload>
+	<controls>
+		<control type="image">
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<texture>backgrounds/background.png</texture>
+			<visible>!Skin.HasSetting(UseCustomHomeBackground)</visible>
+		</control>
+		<control type="image">
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<texture>$INFO[Skin.String(CustomHomeBackground)]</texture>
+			<visible>Skin.HasSetting(UseCustomHomeBackground)</visible>
+		</control>
+		<control type="group">
+			<bottom>0</bottom>
+			<left>0</left>
+			<right>0</right>
+			<height>270</height>
+			<control type="image">
+					<description>marco der</description>
+					<right>0</right>
+					<width>1500</width>
+					<height>270</height>
+					<texture>extra/bottom_frame_home_r.png</texture>
+			</control>
+			<control type="image">
+					<description>marco izq</description>
+					<left>0</left>
+					<width>600</width>
+					<height>270</height>
+					<texture>extra/bottom_frame_home_l.png</texture>
+			</control>
+		</control>
+		<control type="group">
+			<control type="button" id="60">
+				<description>Jager App Switcher Icon</description>
+				<right>75</right>
+				<bottom>55</bottom>
+				<width>140</width>
+				<height>140</height>
+				<onup>50</onup>
+				<ondown>60</ondown>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<texturefocus></texturefocus>
+				<texturenofocus></texturenofocus>
+				<onclick>ActivateWindow(1115)</onclick>
+			</control> 
+			<control type="image">
+				<right>75</right>
+				<bottom>55</bottom>
+				<width>140</width>
+				<height>140</height>
+				<texture>buttons_vintage/button_setting.png</texture>
+				<animation effect="zoom" start="100" end="110" time="120" center="auto" condition="Control.HasFocus(60)">Conditional</animation>
+				<animation effect="zoom" start="110" end="100" time="120" center="auto" condition="!Control.HasFocus(60)">Conditional</animation>
+				<visible>!Skin.HasSetting(UseCustomPopupIcon)</visible>
+			</control> 
+			<control type="image">
+				<right>75</right>
+				<bottom>55</bottom>
+				<width>140</width>
+				<height>140</height>
+				<texture>$INFO[Skin.String(CustomPopupIcon)]</texture>
+				<animation effect="zoom" start="100" end="110" time="120" center="auto" condition="Control.HasFocus(60)">Conditional</animation>
+				<animation effect="zoom" start="110" end="100" time="120" center="auto" condition="!Control.HasFocus(60)">Conditional</animation>
+				<visible>Skin.HasSetting(UseCustomPopupIcon)</visible>
+			</control> 
+		</control>	
+		<control type="image">
+			<description>notification background</description>
+			<posx>40</posx>
+			<posy>40</posy>
+			<width>556</width>
+			<height>185</height>
+			<texture>extra/notification_background.png</texture>
+		</control>
+		<control type="group">
+			<include>Window_OpenClose_Animation_Slide_Down</include>
+			<visible>[!IsEmpty(Weather.Plugin) + Weather.IsFetched] + !Window.IsVisible(ExtendedProgressDialog) + !Window.IsActive(10107)</visible>
+			<include>VisibleFadeEffect</include>
+			<posx>26</posx>
+			<posy>50</posy>
+			<width>480</width>
+			<height>160</height>
+			<control type="grouplist">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>500</width>
+				<height>160</height>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<aligny>center</aligny>
+				<itemgap>0</itemgap>
+				<control type="image">
+					<description>Weather image</description>
+					<width>140</width>
+					<height>140</height>
+					<aligny>center</aligny>
+					<aspectratio>keep</aspectratio>
+					<texture>special://skin/media/weathervintage/$INFO[Window(Weather).Property(Current.FanartCode)].png</texture>
+				</control>
+				<control type="group">
+				<width>180</width>
+				<height>140</height>
+					<control type="label">
+						<posx>4</posx>
+						<posy>4</posy>
+						<height>140</height>
+						<width>180</width>
+						<label>[B]$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits][/B]</label>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Vintagem84</font>
+						<textcolor>AA000000</textcolor>
+					</control>
+					<control type="label">
+						<posy>0</posy>
+						<height>140</height>
+						<width>180</width>
+						<label>[B]$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits][/B]</label>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Vintagem80</font>
+						<textcolor>DDE8D2B0</textcolor>
+					</control>
+				</control>
+			</control>
+		</control>
+		<control type="button" id="50">
+			<description>notification frame button</description>
+			<posx>40</posx>
+			<posy>40</posy>
+			<width>556</width>
+			<height>185</height>
+			<onup>50</onup>
+			<ondown>9000</ondown>
+			<onleft>9000</onleft>
+			<onright>60</onright>
+			<texturefocus>extra/notification_frame_up.png</texturefocus>
+			<texturenofocus>extra/notification_frame.png</texturenofocus>
+			<label></label>
+			<onclick>ActivateWindow(Weather)</onclick>
+		</control>
+		<include condition="Skin.HasSetting(Home4Buttons)">HOME_BUTTONS_4</include>
+		<include condition="!Skin.HasSetting(Home4Buttons)">HOME_BUTTONS_3</include>
+		<include>CommonHomePlaying</include>	
+		<include>Clock_Time</include>
+		<control type="image">
+			<include>FullScreenDimensions</include>
+			<texture>extra/full_frame_home.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">9013</defaultcontrol>
+	<depth>DepthOSD</depth>
+	<controls>
+		<control type="group">
+			<centerleft>50%</centerleft>
+            <top>0</top>
+            <width>1800</width>
+            <height>1080</height>
+			<control type="group">
+				<control type="button" id="9013">
+						<description>Home button</description>
+						<left>27</left>
+						<posy>25</posy>
+						<width>160</width>
+						<height>90</height>
+						<onup>9013</onup>
+						<ondown>9015</ondown>
+						<onleft>9013</onleft>
+						<onright>9015</onright>	
+						<texturefocus>buttons_vintage/button_home2_up.png</texturefocus>
+						<texturenofocus>buttons_vintage/button_home2.png</texturenofocus>
+						<onclick>Dialog.Close(MusicOSD)</onclick>
+						<onclick>ActivateWindow(Home)</onclick>
+				</control>
+				<control type="group">
+					<visible>!Window.IsVisible(1117)</visible>
+					<left>50%</left>
+					<posy>32</posy>
+					<control type="image">
+						<left>-675</left>
+						<width>1350</width>
+						<height>75</height>
+						<texture>extra/music_progress_background.png</texture>
+					</control>
+					<control type="progress">
+						<description>Music Progress</description>
+						<left>-522</left>
+						<posy>7</posy>
+						<width>1050</width>
+						<height>30</height>
+						<info>Player.Progress</info>
+						<texturebg></texturebg>
+						<midtexture>extra/progress_fill30b.png</midtexture>
+					</control>
+					<control type="image">
+						<left>-675</left>
+						<width>1350</width>
+						<height>75</height>
+						<texture>extra/music_progress_frame.png</texture>
+					</control>
+					<control type="slider">
+						<left>-525</left>
+						<posy>13</posy>
+						<width>1060</width>
+						<height>50</height>
+						<onup>8010</onup>
+						<ondown>650</ondown>
+						<texturesliderbar colordiffuse="00FFFFFF">extra/progress_nib3.png</texturesliderbar>
+						<textureslidernib>extra/progress_nib3.png</textureslidernib>
+						<textureslidernibfocus colordiffuse="FFCC6600">extra/progress_nib3.png</textureslidernibfocus>
+						<info>Player.Progress</info>
+						<onup>201</onup>
+						<ondown>200</ondown>
+						<visible>Player.SeekEnabled + !MusicPlayer.Content(LiveTV)</visible>
+						<action>seek</action>
+					</control>
+					<control type="label">
+						<visible>Player.HasMedia</visible>
+						<left>-645</left>
+						<posy>19</posy>
+						<width>100</width>
+						<height>40</height>
+						<alignx>right</alignx>
+						<aligny>center</aligny>
+						<font>Vintagesb40</font>
+						<textcolor>DDE8D2B0</textcolor>
+						<label>$INFO[Player.Time]</label>
+					</control>  
+					<control type="label">
+						<left>560</left>
+						<posy>19</posy>
+						<width>100</width>
+						<height>40</height>
+						<alignx>right</alignx>
+						<aligny>center</aligny>
+						<font>Vintagesb40</font>
+						<textcolor>DDE8D2B0</textcolor>
+						<label>$INFO[Player.Duration]</label>
+					</control>  
+				</control>
+				<control type="image">
+					<right>27</right>
+					<posy>27</posy>
+					<width>160</width>
+					<height>90</height>
+					<texture>buttons_vintage/button_empty.png</texture>
+				</control> 
+				<control type="label">
+					<right>50</right>
+					<posy>50</posy>
+					<width>105</width>
+					<height>40</height>
+					<alignx>right</alignx>
+					<aligny>center</aligny>
+					<font>Vintagesb45</font>
+					<textcolor>FFC08A2A</textcolor>
+					<shadowcolor>88000000</shadowcolor>
+					<label>$INFO[System.Time]</label>
+				</control>
+			</control>			
+			<control type="group">
+				<left>25</left>
+				<top>880</top>
+				<width>1750</width>
+				<height>180</height>
+				<visible>String.IsEmpty(Skin.String(VizMode)) | String.IsEqual(Skin.String(VizMode),Windowed)</visible>
+				<control type="image">
+					<width>1750</width>
+					<height>180</height>
+					<texture>extra/music_buttons_background.png</texture>
+				</control> 
+				<control type="togglebutton" id="9001">
+					<description>Play Button</description>
+					<posx>805</posx>
+					<posy>20</posy>
+					<width>140</width>
+					<height>140</height>
+					<onup>9015</onup>
+					<ondown>9001</ondown>
+					<onleft>9006</onleft>
+					<onright>9007</onright>	
+					<texturefocus>buttons_vintage/button_pause3_up.png</texturefocus>
+					<texturenofocus>buttons_vintage/button_pause3.png</texturenofocus>
+					<alttexturefocus>buttons_vintage/button_play3_up.png</alttexturefocus>
+					<alttexturenofocus>buttons_vintage/button_play3.png</alttexturenofocus>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+					<onclick>PlayerControl(Play)</onclick>
+				</control>	
+				<control type="button" id="9002">
+					<description>Back</description>
+					<posx>37</posx>
+					<posy>51</posy>
+					<width>118</width>
+					<height>81</height>
+					<onup>9015</onup>
+					<ondown>9002</ondown>
+					<onleft>9013</onleft>
+					<onright>9003</onright>	
+					<texturenofocus>buttons_vintage/button_back_s.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_back_s_up.png</texturefocus>
+					<onclick>Dialog.Close(MusicOSD)</onclick>
+					<onclick>Action(Back)</onclick>
+				</control>
+				<control type="button" id="9003">
+					<description>Menu</description>
+					<posx>170</posx>
+					<posy>51</posy>
+					<width>118</width>
+					<height>81</height>
+					<onup>9015</onup>
+					<ondown>9003</ondown>
+					<onleft>9002</onleft>
+					<onright>9004</onright>	
+					<texturenofocus>buttons_vintage/button_menu_s.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_menu_s_up.png</texturefocus>
+					<onclick>ActivateWindow(1105)</onclick>
+				</control>
+				<control type="button" id="9004">
+					<description>Volumen</description>
+					<posx>340</posx>
+					<posy>50</posy>
+					<width>150</width>
+					<height>85</height>
+					<onup>9015</onup>
+					<ondown>9004</ondown>
+					<onleft>9003</onleft>
+					<onright>9005</onright>	
+					<texturenofocus>buttons_vintage/button_volume.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_volume_up.png</texturefocus>
+					<onclick>ActivateWindow(1117)</onclick>
+				</control>
+				<control type="button" id="9005">
+					<description>Previous Button</description>
+					<posx>492</posx>
+					<posy>50</posy>
+					<width>150</width>
+					<height>85</height>
+					<onup>9015</onup>
+					<ondown>9005</ondown>
+					<onleft>9004</onleft>
+					<onright>9006</onright>	
+					<texturenofocus>buttons_vintage/button_prev.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_prev_up.png</texturefocus>
+					<onclick>PlayerControl(Previous)</onclick>
+				</control>
+				<control type="button" id="9006">
+					<description>Rewind Button</description>
+					<posx>643</posx>
+					<posy>50</posy>
+					<width>150</width>
+					<height>85</height>
+					<onup>9015</onup>
+					<ondown>9006</ondown>
+					<onleft>9005</onleft>
+					<onright>9001</onright>	
+					<texturenofocus>buttons_vintage/button_rewind.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_rewind_up.png</texturefocus>
+					<onclick>PlayerControl(Rewind)</onclick>
+				</control>
+				<control type="button" id="9007">
+					<description>Forward Button</description>
+					<posx>963</posx>
+					<posy>50</posy>
+					<width>150</width>
+					<height>85</height>
+					<onup>9015</onup>
+					<ondown>9007</ondown>
+					<onleft>9001</onleft>
+					<onright>9008</onright>	
+					<texturenofocus>buttons_vintage/button_forward.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_forward_up.png</texturefocus>
+					<onclick>PlayerControl(Forward)</onclick>
+				</control>
+				<control type="button" id="9008">
+					<description>Next Button</description>
+					<posx>1114</posx>
+					<posy>50</posy>
+					<width>150</width>
+					<height>85</height>
+					<onup>9015</onup>
+					<ondown>9008</ondown>
+					<onleft>9007</onleft>
+					<onright>9009</onright>	
+					<texturenofocus>buttons_vintage/button_next.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_next_up.png</texturefocus>
+					<onclick>PlayerControl(Next)</onclick>
+				</control>
+				<control type="button" id="9009">
+					<description>Stop Button</description>
+					<posx>1267</posx>
+					<posy>50</posy>
+					<width>150</width>
+					<height>85</height>
+					<onup>9015</onup>
+					<ondown>9009</ondown>
+					<onleft>9008</onleft>
+					<onright>9010</onright>	
+					<texturenofocus>buttons_vintage/button_stop.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_stop_up.png</texturefocus>
+					<onclick>PlayerControl(Stop)</onclick>
+					<onclick>Dialog.Close(MusicOSD)</onclick>
+					<onclick>Action(Back)</onclick>
+				</control>
+				<control type="radiobutton" id="9010">
+					<description>Random Button</description>
+					<posx>1470</posx>
+					<posy>51</posy>
+					<width>118</width>
+					<height>81</height>
+					<onup>9015</onup>
+					<ondown>9010</ondown>
+					<onleft>9009</onleft>
+					<onright>9011</onright>	
+					<radiowidth>118</radiowidth>
+					<radioheight>81</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<textureradiooffnofocus>buttons_vintage/button_random_s_off.png</textureradiooffnofocus>
+					<textureradioofffocus>buttons_vintage/button_random_s_off_up.png</textureradioofffocus>
+					<textureradioonnofocus>buttons_vintage/button_random_s_on_up.png</textureradioonnofocus>
+					<textureradioonfocus>buttons_vintage/button_random_s_on_up.png</textureradioonfocus>
+					<selected>Playlist.IsRandom</selected>
+					<onclick>PlayerControl(Random)</onclick>
+				</control>
+				<control type="group">
+					<control type="button" id="9011">
+						<posx>1595</posx>
+						<posy>51</posy>
+						<width>118</width>
+						<height>81</height>
+						<onup>9015</onup>
+						<ondown>9011</ondown>
+						<onleft>9010</onleft>
+						<onright>9011</onright>	
+						<texturenofocus />
+						<texturefocus />
+						<onclick>PlayerControl(Repeat)</onclick>
+					</control>
+					<control type="image">
+						<posx>1595</posx>
+						<posy>51</posy>
+						<width>118</width>
+						<height>81</height>
+						<texture>$VAR[RepeatButtonVintageVar]</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<left>25</left>
+				<top>910</top>
+				<width>1750</width>
+				<height>180</height>
+				<visible>String.IsEqual(Skin.String(VizMode),Fullscreen)</visible>
+				<control type="image">
+					<posy>36</posy>
+					<width>1750</width>
+					<height>111</height>
+					<texture>extra/music_buttons2_background.png</texture>
+				</control> 
+				<control type="togglebutton" id="9001">
+					<description>Play Button</description>
+					<posx>805</posx>
+					<posy>51</posy>
+					<width>150</width>
+					<height>85</height>
+					<onup>9015</onup>
+					<ondown>9001</ondown>
+					<onleft>9006</onleft>
+					<onright>9007</onright>	
+					<texturefocus>buttons_vintage/button_pause_up.png</texturefocus>
+					<texturenofocus>buttons_vintage/button_pause.png</texturenofocus>
+					<alttexturefocus>buttons_vintage/button_play_up.png</alttexturefocus>
+					<alttexturenofocus>buttons_vintage/button_play.png</alttexturenofocus>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+					<onclick>PlayerControl(Play)</onclick>
+				</control>	
+				<control type="button" id="9002">
+					<description>Back</description>
+					<posx>37</posx>
+					<posy>51</posy>
+					<width>118</width>
+					<height>81</height>
+					<onup>9015</onup>
+					<ondown>9002</ondown>
+					<onleft>9013</onleft>
+					<onright>9003</onright>	
+					<texturenofocus>buttons_vintage/button_back_s.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_back_s_up.png</texturefocus>
+					<onclick>Dialog.Close(MusicOSD)</onclick>
+					<onclick>Action(Back)</onclick>
+				</control>
+				<control type="button" id="9003">
+					<description>Menu</description>
+					<posx>170</posx>
+					<posy>51</posy>
+					<width>118</width>
+					<height>81</height>
+					<onup>9015</onup>
+					<ondown>9003</ondown>
+					<onleft>9002</onleft>
+					<onright>9004</onright>	
+					<texturenofocus>buttons_vintage/button_menu_s.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_menu_s_up.png</texturefocus>
+					<onclick>ActivateWindow(1105)</onclick>
+				</control>
+				<control type="button" id="9004">
+					<description>Volumen</description>
+					<posx>340</posx>
+					<posy>50</posy>
+					<width>150</width>
+					<height>85</height>
+					<onup>9015</onup>
+					<ondown>9004</ondown>
+					<onleft>9003</onleft>
+					<onright>9005</onright>	
+					<texturenofocus>buttons_vintage/button_volume.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_volume_up.png</texturefocus>
+					<onclick>ActivateWindow(1117)</onclick>
+				</control>
+				<control type="button" id="9005">
+					<description>Previous Button</description>
+					<posx>492</posx>
+					<posy>50</posy>
+					<width>150</width>
+					<height>85</height>
+					<onup>9015</onup>
+					<ondown>9005</ondown>
+					<onleft>9004</onleft>
+					<onright>9006</onright>	
+					<texturenofocus>buttons_vintage/button_prev.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_prev_up.png</texturefocus>
+					<onclick>PlayerControl(Previous)</onclick>
+				</control>
+				<control type="button" id="9006">
+					<description>Rewind Button</description>
+					<posx>643</posx>
+					<posy>50</posy>
+					<width>150</width>
+					<height>85</height>
+					<onup>9015</onup>
+					<ondown>9006</ondown>
+					<onleft>9005</onleft>
+					<onright>9001</onright>	
+					<texturenofocus>buttons_vintage/button_rewind.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_rewind_up.png</texturefocus>
+					<onclick>PlayerControl(Rewind)</onclick>
+				</control>
+				<control type="button" id="9007">
+					<description>Forward Button</description>
+					<posx>963</posx>
+					<posy>50</posy>
+					<width>150</width>
+					<height>85</height>
+					<onup>9015</onup>
+					<ondown>9007</ondown>
+					<onleft>9001</onleft>
+					<onright>9008</onright>	
+					<texturenofocus>buttons_vintage/button_forward.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_forward_up.png</texturefocus>
+					<onclick>PlayerControl(Forward)</onclick>
+				</control>
+				<control type="button" id="9008">
+					<description>Next Button</description>
+					<posx>1114</posx>
+					<posy>50</posy>
+					<width>150</width>
+					<height>85</height>
+					<onup>9015</onup>
+					<ondown>9008</ondown>
+					<onleft>9007</onleft>
+					<onright>9009</onright>	
+					<texturenofocus>buttons_vintage/button_next.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_next_up.png</texturefocus>
+					<onclick>PlayerControl(Next)</onclick>
+				</control>
+				<control type="button" id="9009">
+					<description>Stop Button</description>
+					<posx>1267</posx>
+					<posy>50</posy>
+					<width>150</width>
+					<height>85</height>
+					<onup>9015</onup>
+					<ondown>9009</ondown>
+					<onleft>9008</onleft>
+					<onright>9010</onright>	
+					<texturenofocus>buttons_vintage/button_stop.png</texturenofocus>
+					<texturefocus>buttons_vintage/button_stop_up.png</texturefocus>
+					<onclick>PlayerControl(Stop)</onclick>
+					<onclick>Dialog.Close(MusicOSD)</onclick>
+					<onclick>Action(Back)</onclick>
+				</control>
+				<control type="radiobutton" id="9010">
+					<description>Random Button</description>
+					<posx>1470</posx>
+					<posy>51</posy>
+					<width>118</width>
+					<height>81</height>
+					<onup>9015</onup>
+					<ondown>9010</ondown>
+					<onleft>9009</onleft>
+					<onright>9011</onright>	
+					<radiowidth>118</radiowidth>
+					<radioheight>81</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<textureradiooffnofocus>buttons_vintage/button_random_s_off.png</textureradiooffnofocus>
+					<textureradioofffocus>buttons_vintage/button_random_s_off_up.png</textureradioofffocus>
+					<textureradioonnofocus>buttons_vintage/button_random_s_on_up.png</textureradioonnofocus>
+					<textureradioonfocus>buttons_vintage/button_random_s_on_up.png</textureradioonfocus>
+					<selected>Playlist.IsRandom</selected>
+					<onclick>PlayerControl(Random)</onclick>
+				</control>
+				<control type="group">
+					<control type="button" id="9011">
+						<posx>1595</posx>
+						<posy>51</posy>
+						<width>118</width>
+						<height>81</height>
+						<onup>9015</onup>
+						<ondown>9011</ondown>
+						<onleft>9010</onleft>
+						<onright>9011</onright>	
+						<texturenofocus />
+						<texturefocus />
+						<onclick>PlayerControl(Repeat)</onclick>
+					</control>
+					<control type="image">
+						<posx>1595</posx>
+						<posy>51</posy>
+						<width>118</width>
+						<height>81</height>
+						<texture>$VAR[RepeatButtonVintageVar]</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<control type="button" id="9015">
+					<right>25</right>
+					<posy>115</posy>
+					<width>1000</width>
+					<height>450</height>
+					<onup>9013</onup>
+					<ondown>9001</ondown>
+					<onleft>9013</onleft>
+					<onright>9015</onright>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<visible>String.IsEmpty(Skin.String(VizMode)) | String.IsEqual(Skin.String(VizMode),Windowed)</visible>
+					<onfocus>Skin.SetString(VizFocus,Spectrum)</onfocus>
+					<onunfocus>Skin.Reset(VizFocus)</onunfocus>
+					<onclick>Action(Close)</onclick>
+					<onclick>ActivateWindow(1112)</onclick>
+				</control>
+				<control type="button" id="9015">
+					<left>0</left>
+					<top>100</top>
+					<width>100%</width>
+					<bottom>180</bottom>
+					<onup>9013</onup>
+					<ondown>9001</ondown>
+					<onleft>9013</onleft>
+					<onright>9015</onright>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<visible>String.IsEqual(Skin.String(VizMode),Fullscreen)</visible>
+					<onfocus>Skin.SetString(VizFocus,Spectrum)</onfocus>
+					<onunfocus>Skin.Reset(VizFocus)</onunfocus>
+					<onclick>Action(Close)</onclick>
+					<onclick>ActivateWindow(1116)</onclick>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>
