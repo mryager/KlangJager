@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.klangjager" version="1.0.0" name="KlangJager" provider-name="Mario Yager">
+<addon id="skin.Klangjager" version="1.0.0" name="KlangJager" provider-name="Mario Yager">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -40,9 +40,9 @@
 		<description lang="es_AR">Esta skin está diseñada para usarla en dispositivos táctiles</description>
 		<description lang="es_ES">Esta skin está diseñada para usarla en dispositivos táctiles</description>
 		<description lang="es_MX">Esta skin está diseñada para usarla en dispositivos táctiles</description>
-		<disclaimer lang="en_US">Estuary is the default skin for Kodi, removing it may cause issues</disclaimer>
-		<disclaimer lang="es_AR">Estuary es el skin por defecto de Kodi. Borrarlo puede causar problemas</disclaimer>
-		<disclaimer lang="es_ES">Estuary es el skin por defecto de Kodi, quitarlo puede causar problemas</disclaimer>
-		<disclaimer lang="es_MX">Estuary es la máscara predeterminada de Kodi, eliminarla puede causar problemas</disclaimer>
+		<disclaimer lang="en_US">This skin is based on Estuary and other community creations.</disclaimer>
+		<disclaimer lang="es_AR">Esta skin esta basada en Estuary y en otros trabajos de la comunidad.</disclaimer>
+		<disclaimer lang="es_ES">Esta skin esta basada en Estuary y en otros trabajos de la comunidad.</disclaimer>
+		<disclaimer lang="es_MX">Esta skin esta basada en Estuary y en otros trabajos de la comunidad.</disclaimer>
 	</extension>
 </addon>
