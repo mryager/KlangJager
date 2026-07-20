@@ -17,9 +17,9 @@
 				<height>850</height>
 				<onleft>504</onleft>
 				<onright>504</onright>
-				<onup condition="Integer.IsGreater(Container.NumPages,1)">5198</onup>
-				<onup condition="!Integer.IsGreater(Container.NumPages,1)">9000</onup>
-				<ondown>504</ondown>
+				<ondown condition="Integer.IsGreater(Container.NumPages,1)">5198</ondown>
+				<ondown condition="!Integer.IsGreater(Container.NumPages,1)">9000</ondown>
+				<onup>9000</onup>
 				<orientation>horizontal</orientation>
 				<viewtype label="31201">icon</viewtype>
 				<preloaditems>2</preloaditems>

@@ -179,7 +179,7 @@
 			<width>100%</width>
 			<height>100</height>
 			<!-- BOTON IZQUIERDO -->
-			<control type="button">
+			<control type="button" id="9000">
 				<left>3.9%</left>
 				<top>0</top>
 				<width>224</width>
