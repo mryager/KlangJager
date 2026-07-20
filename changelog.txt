@@ -1,2 +1,5 @@
+[B]1.0.1[/B]
+• Fixed keyboard navigation in some windows.
+
 [B]1.0[/B]
 • Initial release
